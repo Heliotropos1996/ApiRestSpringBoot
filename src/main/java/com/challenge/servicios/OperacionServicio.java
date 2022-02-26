@@ -27,12 +27,13 @@ public class OperacionServicio {
  		}
 
  		Operacion opera = ope.get();
- 		opera.getTarj().getMarca();
- 	
+ 		Integer ide = opera.getId();
+ 		String marca = opera.getTarj().getMarca();
+ 		Double tasa = opera.getTasa();
+ 		Double importe = opera.getImporte();
  		
-		
+ 		Operacion oper = new Operacion(ide, importe, tasa, marca);
  		
-		Operacion oper = new Operacion();
 		return oper;
 }
 }

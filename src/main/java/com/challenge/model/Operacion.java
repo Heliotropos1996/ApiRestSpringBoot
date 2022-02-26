@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JacksonInject.Value;
+
 
 @Entity
 public class Operacion {
@@ -18,6 +18,7 @@ public class Operacion {
 	private Double importe;
 	private Double tasa;
 	String marca;
+	
 	@ManyToOne
 	Tarjeta tarj;
 	
