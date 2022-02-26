@@ -2,20 +2,14 @@ package com.challenge.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-
 public class Tarjeta implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,7 +26,8 @@ public class Tarjeta implements Serializable {
 	@DateTimeFormat(pattern = "MM-yy")
 	private Date fech_venc;
 
-	
+	@OneToMany
+	List <Operacion> operacion;
 	
 	public Tarjeta() {
 	
@@ -87,9 +82,7 @@ public class Tarjeta implements Serializable {
 		this.fech_venc = fech_venc;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 
 	
 

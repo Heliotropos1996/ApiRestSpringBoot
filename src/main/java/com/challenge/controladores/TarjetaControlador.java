@@ -1,6 +1,6 @@
 package com.challenge.controladores;
 
-import java.time.Month;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +30,7 @@ public class TarjetaControlador {
 	
 	@PostMapping
 	public void crearTarjeta(Tarjeta tarj) {
-		tarj.setMarca("VISA");
-		tarj.setNumTarjeta(23145747);
-		tarj.setCardholder("Ramiro Foschini");
+		
 		
 		tarjetaServicio.crearTarjeta(tarj);
 		
