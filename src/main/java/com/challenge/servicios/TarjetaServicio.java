@@ -1,6 +1,7 @@
 package com.challenge.servicios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,15 @@ public class TarjetaServicio {
 	public void crearTarjeta(Tarjeta tarj) {
 		tarjetaRepositorio.save(tarj);
 		
+	}
+	
+	public Tarjeta obtenerPorId (Long id) {
+		
+		Optional<Tarjeta> opTarj = tarjetaRepositorio.findById(id);
+		
+		Tarjeta tarj = opTarj.get();
+		
+		return tarj; 
+	
 	}
 }
