@@ -22,6 +22,11 @@ public class TarjetaServicio {
 		
 		return tarjetaRepositorio.findAll();
 	}
+	
+	public Tarjeta buscarPorNumTarjeta (Integer numTarj){
+		return tarjetaRepositorio.findByNumTarjeta(numTarj);
+		
+	}
 	public void crearTarjeta(Tarjeta tarj) {
 		tarjetaRepositorio.save(tarj);
 		
@@ -34,6 +39,19 @@ public class TarjetaServicio {
 		Tarjeta tarj = opTarj.get();
 		
 		return tarj; 
+		
 	
 	}
+	public boolean eliminar (Long id) {
+		try {
+			 tarjetaRepositorio.deleteById(id);
+			 return true;
+		}
+		catch (Exception err) {
+			return false;
+		}
+		
+		}
 }
+
+	
