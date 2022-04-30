@@ -52,6 +52,9 @@ public class TarjetaServicio {
 		}
 		
 		}
+	public void actualizar (Long id, Tarjeta tarj) {
+		tarjetaRepositorio.save(tarj);
+	}
 }
 
 	

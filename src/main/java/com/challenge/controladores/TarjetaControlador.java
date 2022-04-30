@@ -41,11 +41,13 @@ public class TarjetaControlador {
 		
 		return tarjetaServicio.obtenerPorId(id);
 	}
+	
 	@GetMapping("/num")
 	public Tarjeta buscarPorNum (@RequestParam("numTarjeta") Integer numTarjeta) {
 		return tarjetaServicio.buscarPorNumTarjeta(numTarjeta);
 		
 	}
+	
 	@DeleteMapping(path = "/{id}")
 	public boolean eliminar (@PathVariable("id") Long id) {
 		
@@ -58,4 +60,10 @@ public class TarjetaControlador {
 		}
 	}
 	
+	@PostMapping(path = "actualizar/{id}")
+	public void actualizar(@RequestBody Tarjeta tarj, @PathVariable ("id") Long id) {
+		tarj.setId(id);
+		tarjetaServicio.crearTarjeta(tarj);
+		
+	}
 }
