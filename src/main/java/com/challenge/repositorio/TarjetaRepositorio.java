@@ -5,5 +5,6 @@ import com.challenge.model.Tarjeta;
 
 @Repository
 public interface TarjetaRepositorio extends JpaRepository<Tarjeta, Long> {
-public Tarjeta findByNumTarjeta(Integer numTarjeta);
+
+	public Tarjeta findByNumTarjeta(Integer numTarjeta);
 }
